@@ -65,14 +65,7 @@ public class EstudianteDistanciaTest {
     /**
      * Test of obtenerNotas method, of class EstudianteDistancia.
      */
-    @Test
-    public void testObtenerNotas() {
-        System.out.println("obtenerNotas");
-        ArrayList<Nota> ns = null;
-        instance.obtenerNotas(ns);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
     
     @Test
@@ -141,7 +134,7 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(6.0));
         double expResult = 5.0;
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerPeorNota();
         double result = instance.obtenerPeorNota();
         
         assertEquals(expResult, result, 0.0);
@@ -178,7 +171,7 @@ public class EstudianteDistanciaTest {
         double expResult = 7.0;
         instance.establecerNotas(ns);
         instance.establecerMejorNota();
-        double result = instance.obtenerMejorPromedio();
+        double result = instance.obtenerPromedio();
         
         assertEquals(expResult, result, 0.0);
     }
@@ -200,7 +193,7 @@ public class EstudianteDistanciaTest {
         instance.establecerPeorNota();
         instance.establecerPromedio();
         instance.establecerNombresEstudiante("Andrea");
-        instance.establecerApellidoEstudiante("Vela");
+        instance.establecerApellidosEstudiante("Vela");
         instance.establecerIdentificacionEstudiante("98981234");
         
         String expResult = "Nombre Estudiante: Andrea Vela\n"
@@ -209,7 +202,7 @@ public class EstudianteDistanciaTest {
                 + "10.0"
                 + "5.0"
                 + "6.0"
-                + "Proemdio: 7.0"
+                + "Promedio: 7.0"
                 + "Mejor Nota: 10.0"
                 + "Peor Nota: 5.0";
         String result = instance.toString();
